@@ -22,9 +22,9 @@ Además, se utiliza **PostgreSQL** como base de datos y **RabbitMQ** como broker
 ```
 ejercicio-tecnico-backend/
 │
-├── msvc-ejercicio-tecnico/
+├── msvc-customer-person/
 │   ├── Dockerfile
-│   ├── target/msvc-ejercicio-tecnico-0.0.1-SNAPSHOT.jar
+│   ├── target/msvc-customer-person-0.0.1-SNAPSHOT.jar
 │   └── ...
 │
 ├── msvc-account-movement/
@@ -52,7 +52,7 @@ ejercicio-tecnico-backend/
 ### Paso 3. Copiar la intrucción: & "C:\Program Files\Git\bin\bash.exe" -c "./docker-compose.sh"
 ### Paso 4. Presionar la tecla Enter
 ```bash
-cd msvc-ejercicio-tecnico
+cd msvc-customer-person
 mvn clean package -DskipTests
 # Verificar si la compilación fue exitosa
 if [ $? -ne 0 ]; then
@@ -100,5 +100,5 @@ docker-compose up
 
 Este sistema implementa comunicación asíncrona con RabbitMQ:
 
-- El microservicio `msvc-ejercicio-tecnico` publica eventos al modificar el estado de un `Customer`.
+- El microservicio `msvc-customer-person` publica eventos al modificar el estado de un `Customer`.
 - El microservicio `msvc-account-movement` los consume mediante listeners y actualiza el estado del account.
